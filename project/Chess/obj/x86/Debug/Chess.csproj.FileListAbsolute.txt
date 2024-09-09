@@ -1,0 +1,5 @@
+C:\Users\danil\Downloads\Chess-C--main\project\Chess\obj\x86\Debug\Chess.csproj.AssemblyReference.cache
+C:\Users\danil\Downloads\Chess-C--main\project\Chess\obj\x86\Debug\Chess.MainForm.resources
+C:\Users\danil\Downloads\Chess-C--main\project\Chess\obj\x86\Debug\Chess.Properties.Resources.resources
+C:\Users\danil\Downloads\Chess-C--main\project\Chess\obj\x86\Debug\Chess.csproj.GenerateResource.cache
+C:\Users\danil\Downloads\Chess-C--main\project\Chess\obj\x86\Debug\Chess.csproj.CoreCompileInputs.cache
