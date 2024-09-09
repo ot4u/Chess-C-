@@ -110,34 +110,59 @@
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
-            this.fileToolStripMenuItem.Text = "Игра";
+            this.fileToolStripMenuItem.Text = "Game";
+            // 
+            // newAIGame
+            // 
+            this.newAIGame.Name = "newAIGame";
+            this.newAIGame.Size = new System.Drawing.Size(216, 22);
+            this.newAIGame.Text = "New AI vs AI Game";
+            this.newAIGame.Click += new System.EventHandler(this.NewGame);
             // 
             // newGameToolStripMenuItem
             // 
             this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
             this.newGameToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
-            this.newGameToolStripMenuItem.Text = "Новая игра ИИ vs Игрока";
+            this.newGameToolStripMenuItem.Text = "New AI vs Player Game";
             this.newGameToolStripMenuItem.Click += new System.EventHandler(this.NewGame);
             // 
             // new2PlayerGameToolStripMenuItem
             // 
             this.new2PlayerGameToolStripMenuItem.Name = "new2PlayerGameToolStripMenuItem";
             this.new2PlayerGameToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
-            this.new2PlayerGameToolStripMenuItem.Text = "Новая игра Игрок vs Игрока";
+            this.new2PlayerGameToolStripMenuItem.Text = "New Player vs Player Game";
             this.new2PlayerGameToolStripMenuItem.Click += new System.EventHandler(this.NewGame);
             // 
             // endCurrentGameToolStripMenuItem
             // 
             this.endCurrentGameToolStripMenuItem.Name = "endCurrentGameToolStripMenuItem";
             this.endCurrentGameToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
-            this.endCurrentGameToolStripMenuItem.Text = "Закончить текущую игру";
+            this.endCurrentGameToolStripMenuItem.Text = "End current game";
             this.endCurrentGameToolStripMenuItem.Click += new System.EventHandler(this.endGame);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(213, 6);
-            //
+            // 
+            // manualBoardToolStripMenuItem
+            // 
+            this.manualBoardToolStripMenuItem.CheckOnClick = true;
+            this.manualBoardToolStripMenuItem.Name = "manualBoardToolStripMenuItem";
+            this.manualBoardToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.manualBoardToolStripMenuItem.Text = "Manual Board";
+            this.manualBoardToolStripMenuItem.CheckedChanged += new System.EventHandler(this.manualBoardToolStripMenuItem_CheckedChanged);
+            // 
+            // setPieceToolStripMenuItem
+            // 
+            this.setPieceToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.whiteToolStripMenuItem1,
+            this.blackToolStripMenuItem1});
+            this.setPieceToolStripMenuItem.Enabled = false;
+            this.setPieceToolStripMenuItem.Name = "setPieceToolStripMenuItem";
+            this.setPieceToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.setPieceToolStripMenuItem.Text = "Set Piece";
+            // 
             // whiteToolStripMenuItem1
             // 
             this.whiteToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -248,6 +273,14 @@
             this.Black_King.Text = "King";
             this.Black_King.Click += new System.EventHandler(this.manualPieceMenuItem_Click);
             // 
+            // doneToolStripMenuItem
+            // 
+            this.doneToolStripMenuItem.Enabled = false;
+            this.doneToolStripMenuItem.Name = "doneToolStripMenuItem";
+            this.doneToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.doneToolStripMenuItem.Text = "Done";
+            this.doneToolStripMenuItem.Click += new System.EventHandler(this.doneToolStripMenuItem_Click);
+            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
@@ -257,7 +290,7 @@
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
-            this.exitToolStripMenuItem.Text = "Выход";
+            this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.Shutdown);
             // 
             // difficultyDepthToolStripMenuItem
@@ -270,14 +303,14 @@
             this.mnuDif5});
             this.difficultyDepthToolStripMenuItem.Name = "difficultyDepthToolStripMenuItem";
             this.difficultyDepthToolStripMenuItem.Size = new System.Drawing.Size(110, 20);
-            this.difficultyDepthToolStripMenuItem.Text = "Сложность";
+            this.difficultyDepthToolStripMenuItem.Text = "Difficulty (Depth)";
             // 
             // mnuDif1
             // 
             this.mnuDif1.Name = "mnuDif1";
             this.mnuDif1.Size = new System.Drawing.Size(144, 22);
             this.mnuDif1.Tag = "1";
-            this.mnuDif1.Text = "Новичок ( 1 )";
+            this.mnuDif1.Text = "Beginner ( 1 )";
             this.mnuDif1.Click += new System.EventHandler(this.Difficulty);
             // 
             // mnuDif2
@@ -285,7 +318,7 @@
             this.mnuDif2.Name = "mnuDif2";
             this.mnuDif2.Size = new System.Drawing.Size(144, 22);
             this.mnuDif2.Tag = "2";
-            this.mnuDif2.Text = "Легкий ( 2 )";
+            this.mnuDif2.Text = "Easy ( 2 )";
             this.mnuDif2.Click += new System.EventHandler(this.Difficulty);
             // 
             // mnuDif3
@@ -295,7 +328,7 @@
             this.mnuDif3.Name = "mnuDif3";
             this.mnuDif3.Size = new System.Drawing.Size(144, 22);
             this.mnuDif3.Tag = "3";
-            this.mnuDif3.Text = "Средний ( 3 )";
+            this.mnuDif3.Text = "Medium ( 3 )";
             this.mnuDif3.Click += new System.EventHandler(this.Difficulty);
             // 
             // mnuDif4
@@ -303,7 +336,7 @@
             this.mnuDif4.Name = "mnuDif4";
             this.mnuDif4.Size = new System.Drawing.Size(144, 22);
             this.mnuDif4.Tag = "4";
-            this.mnuDif4.Text = "Сложный ( 4 )";
+            this.mnuDif4.Text = "Hard ( 4 )";
             this.mnuDif4.Click += new System.EventHandler(this.Difficulty);
             // 
             // mnuDif5
@@ -311,7 +344,7 @@
             this.mnuDif5.Name = "mnuDif5";
             this.mnuDif5.Size = new System.Drawing.Size(144, 22);
             this.mnuDif5.Tag = "5";
-            this.mnuDif5.Text = "Мастер ( 5 )";
+            this.mnuDif5.Text = "Insane ( 5 )";
             this.mnuDif5.Click += new System.EventHandler(this.Difficulty);
             // 
             // statusStrip1
@@ -334,7 +367,7 @@
             // 
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(63, 17);
-            this.lblStatus.Text = "Думает...";
+            this.lblStatus.Text = "Thinking...";
             // 
             // splitView
             // 
